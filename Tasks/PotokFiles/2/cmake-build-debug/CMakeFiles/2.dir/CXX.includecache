@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/yasen/Desktop/Tasks/PotokFiles/2/main.cpp
+fstream
+/Users/yasen/Desktop/Tasks/PotokFiles/2/fstream
+iostream
+/Users/yasen/Desktop/Tasks/PotokFiles/2/iostream
+
