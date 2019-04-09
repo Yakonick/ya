@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/yasen/Documents/GitHub/ya/Tasks/ncpp7/2.1/main.cpp
+iostream
+-
+stack
+-
+string
+-
+sstream
+-
+
