@@ -1,0 +1,134 @@
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+struct Expression
+{
+	virtual ~Expression() {}
+	virtual void Print() = 0;
+	virtual double Calculate(double x) = 0;
+	virtual Expression * Derivative() = 0;
+	virtual Expression * Clone() = 0;
+};
+
+struct Const : Expression
+{
+	double a;
+	Const(double x) : a(x) {}
+	void Print() { cout << a; }
+	double Calculate(double) { return a; }
+	Expression * Derivative() { return new Const(0); }
+	Expression * Clone() { return new Const(a); }
+};
+
+struct Var : Expression
+{
+	void Print() { cout << 'x'; }
+	double Calculate(double x) { return x; }
+	Expression * Derivative() { return new Const(1); }
+	Expression * Clone() { return new Var(); }
+};
+
+struct Sum : Expression
+{
+	Expression *a, *b;
+	Sum(Expression *aa, Expression *bb): a(aa), b(bb) {}
+	void Print() { a -> Print();  cout << '+'; b -> Print(); }
+	double Calculate(double x) { return a->Calculate(x) + b->Calculate(x); }
+	Expression * Derivative() { return new Sum(a->Derivative(), b->Derivative()); }
+	Expression * Clone() { return new Sum(a->Clone(), b->Clone()); }
+};
+
+struct Minus : Expression
+{
+	Expression *a, *b;
+	Minus(Expression *aa, Expression *bb) : a(aa), b(bb) {}
+	void Print() { a->Print();  cout << '-'; b->Print(); }
+	double Calculate(double x) { return a->Calculate(x) - b->Calculate(x); }
+	Expression * Derivative() { return new Minus(a->Derivative(), b->Derivative()); }
+	Expression * Clone() { return new Minus(a->Clone(), b->Clone()); }
+};
+
+struct Multiply : Expression
+{
+	Expression *a, *b;
+	Multiply(Expression *aa, Expression *bb) : a(aa), b(bb) {}
+	void Print() { a->Print();  cout << '*'; b->Print(); }
+	double Calculate(double x) { return a->Calculate(x) * b->Calculate(x); }
+	Expression * Derivative() { return new Sum(new Multiply(a->Derivative(), b->Clone()), new Multiply(a->Clone(), b->Derivative())); }
+	Expression * Clone() { return new Multiply(a->Clone(), b->Clone()); }
+};
+
+struct Devide : Expression
+{
+	Expression *a, *b;
+	Devide(Expression *aa, Expression *bb) : a(aa), b(bb) {}
+	void Print() { a->Print();  cout << '/'; b->Print(); }
+	double Calculate(double x) { return a->Calculate(x) / b->Calculate(x); }
+	Expression * Derivative() { return new Devide(a->Derivative(), b->Derivative()); }
+	Expression * Clone() { return new Devide(a->Clone(), b->Clone()); }
+};
+
+struct Sin : Expression
+{
+	Expression *a;
+	Sin(Expression *aa) : a(aa) {}
+	void Print() { cout << "sin("; a->Print(); cout << ')'; }
+	double Calculate(double x) { return sin(a->Calculate(x)); }
+	Expression * Clone() { return new Sin(a->Clone()); }
+	Expression * Derivative();
+};
+
+struct Cos : Expression
+{
+	Expression *a;
+	Cos(Expression *aa) : a(aa) {}
+	void Print() { cout << "cos("; a->Print(); cout << ')'; }
+	double Calculate(double x) { return cos(a->Calculate(x)); }
+	Expression * Clone() { return new Cos(a->Clone()); }
+	Expression * Derivative();
+};
+
+struct Exp : Expression
+{
+	Expression *a;
+	Exp(Expression *aa) : a(aa) {}
+	void Print() { cout << "exp("; a->Print(); cout << ')'; }
+	double Calculate(double x) { return exp(a->Calculate(x)); }
+	Expression * Clone() { return new Exp(a->Clone()); }
+	Expression * Derivative() { return new Exp(a->Derivative()); }
+};
+
+struct Ln : Expression
+{
+	Expression *a;
+	Ln(Expression *aa) : a(aa) {}
+	void Print() { cout << "ln("; a->Print(); cout << ')'; }
+	double Calculate(double x) { return log(a->Calculate(x)); }
+	Expression * Clone() { return new Ln(a->Clone()); }
+	Expression * Derivative() { return new Devide(a->Derivative(), a->Clone()); }
+};
+
+Expression * Sin::Derivative() { return new Cos(a->Derivative()); }
+Expression * Cos::Derivative() { return new Sin(a->Derivative()); }
+
+
+
+int main()
+{
+	Expression *E[5];
+	E[0] = new Const(5);
+	E[1] = new Var();
+	E[2] = new Multiply(E[0]->Clone(), E[1]->Clone());
+	E[3] = Ln(E[2]->Clone()).Derivative();
+	E[4] = new Exp(E[3]->Clone());
+
+	E[4]->Print(); 
+	cout << endl;
+
+	for (int i = 0; i < 5; ++i)
+		delete E[i];
+
+	return 0;
+}
