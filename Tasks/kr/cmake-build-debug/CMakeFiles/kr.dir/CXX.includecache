@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/yasen/Desktop/коды/GitHub/ya/Tasks/kr/Main_Struct.h
+string
+-
+
+/Users/yasen/Desktop/коды/GitHub/ya/Tasks/kr/main.cpp
+iostream
+-
+fstream
+-
+string
+-
+Main_Struct.h
+/Users/yasen/Desktop/коды/GitHub/ya/Tasks/kr/Main_Struct.h
+
