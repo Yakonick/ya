@@ -1,0 +1,3 @@
+/Users/yasen/Desktop/коды/GitHub/ya/kr/sem3/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/yasen/Desktop/коды/GitHub/ya/kr/sem3/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/yasen/Desktop/коды/GitHub/ya/kr/sem3/cmake-build-debug/CMakeFiles/sem3.dir

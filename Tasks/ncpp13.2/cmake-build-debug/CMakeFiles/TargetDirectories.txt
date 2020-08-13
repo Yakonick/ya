@@ -1,0 +1,3 @@
+/Users/yasen/Desktop/Коды/GitHub/ya/Tasks/ncpp13.2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/yasen/Desktop/Коды/GitHub/ya/Tasks/ncpp13.2/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/yasen/Desktop/Коды/GitHub/ya/Tasks/ncpp13.2/cmake-build-debug/CMakeFiles/ncpp13_2.dir

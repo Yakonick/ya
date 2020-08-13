@@ -1,0 +1,3 @@
+/Users/yasen/Desktop/Коды/GitHub/ya/Tasks/TMP_KR_AVL/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/yasen/Desktop/Коды/GitHub/ya/Tasks/TMP_KR_AVL/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/yasen/Desktop/Коды/GitHub/ya/Tasks/TMP_KR_AVL/cmake-build-debug/CMakeFiles/TMP_KR_AVL.dir

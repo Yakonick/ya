@@ -1,0 +1,3 @@
+/Users/yasen/Desktop/коды/GitHub/ya/kr/1-d1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/yasen/Desktop/коды/GitHub/ya/kr/1-d1/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/yasen/Desktop/коды/GitHub/ya/kr/1-d1/cmake-build-debug/CMakeFiles/1_d1.dir

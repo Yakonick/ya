@@ -1,0 +1,3 @@
+/Users/yasen/Desktop/Коды/GitHub/ya/Tasks/tmp1123/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/yasen/Desktop/Коды/GitHub/ya/Tasks/tmp1123/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/yasen/Desktop/Коды/GitHub/ya/Tasks/tmp1123/cmake-build-debug/CMakeFiles/tmp1123.dir
